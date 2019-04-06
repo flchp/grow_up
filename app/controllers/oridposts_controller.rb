@@ -12,6 +12,7 @@ class OridpostsController < ApplicationController
 
   def create
     @oridpost = Oridpost.new(oridpost_params)
+    @oridpost.user = current_user
     if @oridpost.save
       redirect_to oridposts_path
     else

@@ -1,0 +1,2 @@
+class PostOrid < ApplicationRecord
+end

@@ -1,0 +1,12 @@
+<table class="table table-bordered">
+  <% @post_orids.each do |post_orid| %>
+  <tr>
+    <td>
+      <%= link_to(post_orid.title, post_orid_path(post_orid)) %>
+    </td>
+    <td>
+      <%= post_orid.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

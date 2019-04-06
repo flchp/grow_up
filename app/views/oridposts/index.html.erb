@@ -1,0 +1,20 @@
+<div class="pull-right">
+  <%= link_to("Add a oridpost", new_oridpost_path, :class => "btn btn-default" ) %>
+</div>
+
+<table class="table table-bordered">
+  <% @oridposts.each do |oridpost| %>
+  <tr>
+    <td>
+      <%= link_to(oridpost.title, oridpost_path(oridpost)) %>
+    </td>
+    <td>
+      <%= link_to("edit", edit_oridpost_path(oridpost)) %> |
+      <%= link_to("Destroy", oridpost_path(oridpost), :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+    </td>
+    <td>
+      <%= oridpost.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

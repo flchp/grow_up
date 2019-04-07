@@ -46,6 +46,8 @@ gem 'simple_form'
 #数据库gem
 gem 'mysql2'
 
+gem 'annotate'
+
 group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'

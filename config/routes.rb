@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
     }
-  root 'oridposts#index'
+  root 'welcome#index'
   resources :oridposts
 end

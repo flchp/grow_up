@@ -13,8 +13,8 @@
     </td>
     <td>
       <% if current_user && current_user == oridpost.user %>
-        <%= link_to("edit", edit_oridpost_path(oridpost)) %> |
-        <%= link_to("Destroy", oridpost_path(oridpost), :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+        <%= link_to("edit", edit_oridpost_path(oridpost), :class => "btn btn-info") %> |
+        <%= link_to("Destroy", oridpost_path(oridpost), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure?"}) %>
       <% end %>
     </td>
     <td>

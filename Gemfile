@@ -34,9 +34,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#前端UIgem
 gem 'bootstrap-sass'
+#会员登陆gem
 gem 'devise'
+#会员登陆验证gem
+gem 'rucaptcha'
+gem 'dalli'
+#表单gem
 gem 'simple_form'
+#数据库gem
 gem 'mysql2'
 
 group :development, :test do

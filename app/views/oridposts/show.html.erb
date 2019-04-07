@@ -1,16 +1,33 @@
 <h1><%= @oridpost.title %></h1>
 <p>
+  关于今天的课程, 你记得什么?
+  <br>
+  完成了什么?
+</p>
+<p>
   <%= simple_format(@oridpost.objective) %>
 </p>
-
+<p>
+  你要如何形容今天的情绪
+  <br>
+  今天的高峰是什么?今天的低点是什么?
+</p>
 <p>
   <%= simple_format(@oridpost.reflective) %>
 </p>
-
+<p>
+  我们今天学到了什么?
+  <br>
+  今天一个重要的领悟是什么?
+</p>
 <p>
   <%= simple_format(@oridpost.interpretive) %>
 </p>
-
+<p>
+  我们会如何用一句话形容今天的工作？
+  <br>
+  有哪些工作需要明天继续努力?
+</p>
 <p>
   <%= simple_format(@oridpost.decision) %>
 </p>

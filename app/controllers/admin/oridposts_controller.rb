@@ -26,6 +26,18 @@ class Admin::OridpostsController < ApplicationController
     redirect_to admin_oridposts_path
   end
 
+  def publish
+    @oridpost = Oridpost.find(params[:id])
+    @oridpost.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @oridpost = Oridpost.find(params[:id])
+    @oridpost.hide!
+    redirect_to :back
+  end
+
   private
 
   def oridpost_params

@@ -1,9 +1,9 @@
 module OridpostsHelper
   def render_oridpost_status(oridpost)
     if oridpost.is_hidden
-      "(Hidden)"
+      content_tag(:span, "", :class => "fa fa-lock")
     else
-      "(Public)"
+      content_tag(:span, "", :class => "fa fa-globe")
     end
   end
 end

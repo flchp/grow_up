@@ -7,9 +7,19 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :oridposts
   namespace :account do
-    resources :oridposts
+    resources :oridposts do
+      member do
+        post :publish
+        post :hide
+      end
+    end
   end
   namespace :admin do
-    resources :oridposts 
+    resources :oridposts do
+      member do
+        post :publish
+        post :hide
+      end
+    end
   end
 end

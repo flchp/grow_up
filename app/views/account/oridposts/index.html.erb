@@ -14,8 +14,13 @@
     </td>
     <td>
       <% if current_user && current_user == oridpost.user %>
-        <%= link_to("edit", edit_account_oridpost_path(oridpost), :class => "btn btn-info") %> |
-        <%= link_to("Destroy", account_oridpost_path(oridpost), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure?"}) %>
+        <%= link_to("edit", edit_account_oridpost_path(oridpost), :class => "btn btn-xs btn-info") %> |
+        <%= link_to("Destroy", account_oridpost_path(oridpost), :method => :delete, :class => "btn btn-xs btn-danger", :data => {:confirm => "Are you sure?"}) %> |
+        <% if oridpost.is_hidden %>
+          <%= link_to("Publish", publish_account_oridpost_path(oridpost) , :method => :post, :class => "btn btn-xs btn-success") %>
+        <% else %>
+          <%= link_to("Hide", hide_account_oridpost_path(oridpost), :method => :post, :class => "btn btn-xs btn-warning") %>
+        <% end %>
       <% end %>
     </td>
     <td>

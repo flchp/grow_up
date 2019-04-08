@@ -22,6 +22,10 @@ class OridpostsController < ApplicationController
 
   def show
     @oridpost = Oridpost.find(params[:id])
+    if @oridpost.is_hidden
+      flash[:warning] = "This oridpost already archived"
+      redirect_to root_path
+    end
   end
 
   def edit

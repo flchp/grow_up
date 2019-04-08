@@ -38,10 +38,22 @@ class Admin::OridpostsController < ApplicationController
     redirect_to :back
   end
 
+  def display
+    @oridpost = Oridpost.find(params[:id])
+    @oridpost.display!
+    redirect_to :back
+  end
+
+  def conceal
+    @oridpost = Oridpost.find(params[:id])
+    @oridpost.conceal!
+    redirect_to :back
+  end
+
   private
 
   def oridpost_params
-    params.require(:oridpost).permit(:title, :objective, :reflective, :interpretive, :decision, :is_hidden)
+    params.require(:oridpost).permit(:title, :objective, :reflective, :interpretive, :decision, :is_hidden, :is_display)
   end
 
 

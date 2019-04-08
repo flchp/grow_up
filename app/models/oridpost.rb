@@ -28,4 +28,18 @@ class Oridpost < ApplicationRecord
     self.save
   end
 
+  def display!
+    self.is_display = true
+    self.save
+  end
+
+  def conceal!
+    self.is_display = false
+    self.save
+  end
+
+  scope :published, -> {where(is_hidden: false)}
+  scope :displayed, -> {where(is_display: true)}
+
+
 end

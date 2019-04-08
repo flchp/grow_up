@@ -3,7 +3,7 @@ class Account::OridpostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @oridposts = current_user.oridposts
+    @oridposts = current_user.oridposts.order("created_at DESC")
   end
   def new
     @oridpost = Oridpost.new

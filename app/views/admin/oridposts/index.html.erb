@@ -4,6 +4,7 @@
   <tr>
     <td>
       <%= render_oridpost_status(oridpost) %>
+      <%= render_oridpost_diaplay_status(oridpost) %>
       <%= link_to(oridpost.title, oridpost_path(oridpost)) %>
     </td>
     <td>
@@ -16,6 +17,11 @@
         <%= link_to("Publish", publish_admin_oridpost_path(oridpost) , :method => :post, :class => "btn btn-xs btn-success") %>
       <% else %>
         <%= link_to("Hide", hide_admin_oridpost_path(oridpost), :method => :post, :class => "btn btn-xs btn-warning") %>
+      <% end %> |
+      <% if oridpost.is_display %>
+        <%= link_to("conceal", conceal_admin_oridpost_path(oridpost) , :method => :post, :class => "btn btn-xs btn-danger") %>
+      <% else %>
+        <%= link_to("display", display_admin_oridpost_path(oridpost), :method => :post, :class => "btn btn-xs btn-info") %>
       <% end %>
     </td>
     <td>

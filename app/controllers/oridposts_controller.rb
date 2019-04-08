@@ -3,7 +3,7 @@ class OridpostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @oridposts = Oridpost.where(:is_hidden => false).order("created_at DESC")
+    @oridposts = Oridpost.displayed.published.order("created_at DESC")
   end
 
   def new

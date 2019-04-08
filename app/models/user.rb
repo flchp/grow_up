@@ -18,5 +18,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :oridposts 
+  has_many :oridposts
+
+  def admin?
+    is_admin
+  end
+
 end

@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :oridposts
   end
+  namespace :admin do
+    resources :oridposts 
+  end
 end

@@ -45,8 +45,12 @@ gem 'dalli'
 gem 'simple_form'
 #数据库gem
 gem 'mysql2'
-
+#用来添加查阅model属性的gem
 gem 'annotate'
+#图标gem
+gem 'font-awesome-rails'
+
+
 
 group :development, :test do
   gem 'capistrano-rails'

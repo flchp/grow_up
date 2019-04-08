@@ -17,8 +17,10 @@
                       <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                      <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                      <li> <%= link_to(content_tag(:i, '修改密码', class: 'fa fa-edit'), edit_registration_path(:user)) %> </li>
+                    <li> <%= link_to(content_tag(:i, 'My ORIDs', class: 'fa fa-file'), account_oridposts_path) %></li>
+                    <li class="divider"> </li>
+                    <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                    <li> <%= link_to(content_tag(:i, '修改密码', class: 'fa fa-edit'), edit_registration_path(:user)) %> </li>
                   </ul>
                 </li>
               <% end %>

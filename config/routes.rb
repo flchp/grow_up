@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     }
   root 'welcome#index'
   resources :oridposts
+  namespace :account do
+    resources :oridposts
+  end
 end

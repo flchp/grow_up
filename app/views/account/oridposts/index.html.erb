@@ -1,0 +1,25 @@
+<div class="pull-right">
+  <%= link_to("Add a oridpost", new_account_oridpost_path, :class => "btn btn-success" ) %>
+</div>
+
+<table class="table table-bordered">
+  <% @oridposts.each do |oridpost| %>
+  <tr>
+    <td>
+      <%= link_to(oridpost.title, account_oridpost_path(oridpost)) %>
+    </td>
+    <td>
+      <%= oridpost.user.email %>
+    </td>
+    <td>
+      <% if current_user && current_user == oridpost.user %>
+        <%= link_to("edit", edit_account_oridpost_path(oridpost), :class => "btn btn-info") %> |
+        <%= link_to("Destroy", account_oridpost_path(oridpost), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure?"}) %>
+      <% end %>
+    </td>
+    <td>
+      <%= oridpost.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

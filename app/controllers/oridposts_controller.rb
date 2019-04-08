@@ -3,7 +3,7 @@ class OridpostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @oridposts = Oridpost.all
+    @oridposts = Oridpost.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
@@ -47,7 +47,7 @@ class OridpostsController < ApplicationController
   private
 
   def oridpost_params
-    params.require(:oridpost).permit(:title, :objective, :reflective, :interpretive, :decision)
+    params.require(:oridpost).permit(:title, :objective, :reflective, :interpretive, :decision, :is_hidden)
   end
 
 end

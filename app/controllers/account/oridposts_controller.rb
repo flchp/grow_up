@@ -46,6 +46,6 @@ class Account::OridpostsController < ApplicationController
   private
 
   def oridpost_params
-    params.require(:oridpost).permit(:title, :objective, :reflective, :interpretive, :decision)
+    params.require(:oridpost).permit(:title, :objective, :reflective, :interpretive, :decision, :is_hidden)
   end
 end

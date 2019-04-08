@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190408151253) do
+ActiveRecord::Schema.define(version: 20190408155249) do
 
   create_table "oridposts", force: :cascade do |t|
     t.string   "title"
@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20190408151253) do
     t.text     "reflective"
     t.text     "interpretive"
     t.text     "decision"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "user_id"
+    t.boolean  "is_hidden",    default: false
   end
 
   create_table "users", force: :cascade do |t|

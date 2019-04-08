@@ -6,6 +6,7 @@
   <% @oridposts.each do |oridpost| %>
   <tr>
     <td>
+      <%= render_oridpost_status(oridpost) %>
       <%= link_to(oridpost.title, account_oridpost_path(oridpost)) %>
     </td>
     <td>

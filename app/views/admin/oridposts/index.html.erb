@@ -3,16 +3,15 @@
   <% @oridposts.each do |oridpost| %>
   <tr>
     <td>
-      <%= link_to(oridpost.title, account_oridpost_path(oridpost)) %>
+      <%= render_oridpost_status(oridpost) %>
+      <%= link_to(oridpost.title, oridpost_path(oridpost)) %>
     </td>
     <td>
       <%= oridpost.user.email %>
     </td>
     <td>
-      <% if current_user && current_user == oridpost.user %>
-        <%= link_to("edit", edit_account_oridpost_path(oridpost), :class => "btn btn-info") %> |
-        <%= link_to("Destroy", account_oridpost_path(oridpost), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure?"}) %>
-      <% end %>
+      <%= link_to("edit", edit_admin_oridpost_path(oridpost), :class => "btn btn-info") %> |
+      <%= link_to("Destroy", admin_oridpost_path(oridpost), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure?"}) %>
     </td>
     <td>
       <%= oridpost.created_at %>
